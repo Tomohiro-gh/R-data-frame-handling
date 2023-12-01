@@ -2,7 +2,7 @@
 R data frame handling (memo)
 
 
-### 重複なしのrownamesを作成
+##  <span style="color: `#007AFF`">重複なしのrownamesを作成</span>
 ref) https://staffblog.amelieff.jp/entry/2021/10/05/120000
 
 ```r
