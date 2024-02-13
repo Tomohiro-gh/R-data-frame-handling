@@ -18,4 +18,10 @@ genes.df[[1]][which(is.na(genes.df[[1]]))] <-
   genes.df[[3]][which(is.na(genes.df[[1]]))]
 ```
 
-##
+##　重複行を置換する機能
+重複を見つけ出し，　重複があった場合には別の列を参照し，その値を入れる
+```r
+# 3列目の重複部分について，1行目を代入する
+  genes.df[[3]][which(duplicated(df.merge[[3]]))] <- 
+    df.merge[[1]][which(duplicated(df.merge[[3]]))]
+```
