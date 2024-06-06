@@ -25,3 +25,24 @@ genes.df[[1]][which(is.na(genes.df[[1]]))] <-
   genes.df[[3]][which(duplicated(df.merge[[3]]))] <- 
     df.merge[[1]][which(duplicated(df.merge[[3]]))]
 ```
+
+-------------------------------------
+
+## colnameの変更 - 特定の列名のみ変更する場合
+
+・　[参考１)](https://tips-r.blogspot.com/2018/02/r.html) : `names` 関数を使用
+
+・　[参考2)](https://indenkun.hatenablog.com/entry/2020/06/20/202500) : `colnames`　関数を使用
+
+```r
+# Example1)
+colnames(df)[1] <- "ID"
+colnames(df)[length(ncol(df))] <- "ID"
+
+# Example2)：　colnameの番号を指定せず， colnameが一致する箇所だけを変更する
+objectname <- names(df) %>% tail(1)
+names(df)names(df)[which(names(df) == objectname)] <- "ID"
+
+names(df)names(df)[which(names(df) == "xxxxx")] <- "ID"
+
+```
